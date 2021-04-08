@@ -1,6 +1,8 @@
 # Detergent's TFT Bot
 # Branch: main
+from typing import Union
 
+import numpy as np
 import pkg_resources
 import requests
 import base64
@@ -151,43 +153,46 @@ path is not the right or the League Client is not opened!")
 
 # Start utility methods
 class wrappers:
+
+    def search(image: Union[str, np.ndarray], precision: float = 0.8):
+        return search(image, precision)
+
     def onscreen(path, precision=0.8):
         return search(path, precision)[0] != -1
 
     def search_to(path):
-        pos = search(path)
-        if wrappers.onscreen(path):
+        pos = wrappers.search(path)
+        # if wrappers.onscreen(path):
+        if pos[0] != -1:
             auto.moveTo(pos)
             return pos
 
     def click_key(key, delay=.1):
-        auto.keyDown(key)
-        time.sleep(delay)
-        auto.keyUp(key)
-
+        auto.press(key)
 
     def click_left(delay=.1):
-        auto.mouseDown()
-        time.sleep(delay)
-        auto.mouseUp()
-
+        auto.leftClick()
 
     def click_right(delay=.1):
-        auto.mouseDown(button='right')
-        time.sleep(delay)
-        auto.mouseUp(button='right')
-
+        auto.rightClick()
 
     def click_to(path, delay=.1):
-        if wrappers.onscreen(path):
-            auto.moveTo(search(path))
-            wrappers.click_left(delay)
+        pos = wrappers.search(path)
+        # if wrappers.onscreen(path):
+        if pos[0] != -1:
+            # auto.moveTo(pos)
+            auto.leftClick(pos)
+            # wrappers.click_left(delay)
 
     def click_to_r(path, delay=.1):
-        if wrappers.onscreen(path):
-            auto.moveTo(search(path))
-            wrappers.click_right(delay)
+        pos = wrappers.search(path)
+        # if wrappers.onscreen(path):
+        if pos[0] != -1:
+            # auto.moveTo(pos)
+            auto.rightClick(pos)
+            # wrappers.click_right(delay)
         # print(path + " clicked")
+
 # End utility methods
 
 
