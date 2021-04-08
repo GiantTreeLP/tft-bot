@@ -245,6 +245,7 @@ class main:
             main.orbs(1)
             main.buy(1)
             time.sleep(1)
+        print("2-4 reached")
         while wrappers.onscreen("./captures/2-4.png"):
             auto.moveTo(928, 396)
             wrappers.click_right()
@@ -252,6 +253,7 @@ class main:
         time.sleep(5)
 
         if wrappers.onscreen("./captures/2-5.png"):
+            print("2-5 reached")
             while not wrappers.onscreen("./captures/3-2.png"): # change this if you want to surrender at a different stage
                 main.orbs(1)
                 main.buy(1)
