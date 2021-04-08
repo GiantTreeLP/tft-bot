@@ -2,11 +2,6 @@
 # Branch: main
 
 import pkg_resources
-
-pkg_resources.require("PyAutoGUI==0.9.50")
-pkg_resources.require("opencv-python==4.2.0.34")
-pkg_resources.require("python-imageseach-drov0==1.0.6")
-
 import requests
 import base64
 import os
@@ -14,10 +9,13 @@ import pyautogui as auto
 from python_imagesearch.imagesearch import imagesearch as search
 import time
 from printy import printy
-from printy import inputy
 import urllib3
 import pydirectinput
-import json
+
+pkg_resources.require("PyAutoGUI==0.9.50")
+pkg_resources.require("opencv-python==4.2.0.34")
+pkg_resources.require("python-imageseach-drov0==1.0.6")
+
 
 urllib3.disable_warnings()
 # If you haven't installed your game in default path (Windows) set your path here
