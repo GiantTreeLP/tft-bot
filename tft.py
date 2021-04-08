@@ -230,15 +230,11 @@ class main:
                 wrappers.click_to("./captures/champions/{}.png".format(x.lower()))
 
     def get_combo(set:str=1):
-        version = requests.get("https://ddragon.leagueoflegends.com/api/versions.json").json()[0]
-        champion_id = {}
-        champs_req = requests.get(F"http://ddragon.leagueoflegends.com/cdn/{version}/data/en_US/champion.json").json()
-        combojson = requests.get("https://raw.githubusercontent.com/BadMaliciousPyScripts/combo_json/main/combos.json").json()
         wanted_champs = []
         set = "Set{}".format(int(set))
         for x in list(champs_req["data"]):
             try:
-                if combojson[set]["Champions"][x]:
+                if combo_json[set]["Champions"][x]:
                     wanted_champs.append(x)
             except KeyError:
                 pass
@@ -296,6 +292,20 @@ class main:
 
 
 if __name__ == 'main':
+
+    print("Downloading resources...")
+
+    # Load resources once at the start
+    version = requests.get("https://ddragon.leagueoflegends.com/api/versions.json").json()[0]
+    champs_req = requests.get(F"https://ddragon.leagueoflegends.com/cdn/{version}/data/en_US/champion.json").json()
+    combo_json = requests.get(
+        "https://raw.githubusercontent.com/BadMaliciousPyScripts/combo_json/main/combos.json").json()
+
+    printy(rf"""
+    LoL Version: {version}
+    Number of champions: {len(champs_req["data"])}
+    Number of available combos: {len(combo_json)}
+    """)
 
     # Start auth + main script
     print("Developed by:")
