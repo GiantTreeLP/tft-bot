@@ -291,7 +291,7 @@ class main:
         lcu.play_again(lcu_data)
         time.sleep(10)
         print("Queuing up again!")
-        main.queue()
+
 # End main process
 
 
@@ -313,6 +313,8 @@ if __name__ == 'main':
     printy(f"Welcome! You're running Detergent's TFT bot.\nPlease feel free to ask questions or contribute at "
            f"https://github.com/Detergent13/tft-bot", "nB")
     print("Bot started, queuing up!")
-    main.queue()
+
+    while True:
+        main.queue()
 
 # End auth + main script
