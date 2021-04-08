@@ -296,9 +296,7 @@ class main:
 
 # End main process
 
-
-if __name__ == 'main':
-
+if __name__ == '__main__':
     print("Downloading resources...")
 
     # Load resources once at the start
