@@ -205,6 +205,9 @@ class main:
                 response = lcu.auto_accept_current_ready_check(lcu_data)
                 if response == "Not in queue!":
                     break
+            elif response == "Not in queue!":
+                break
+            time.sleep(2)
         main.loading()
 
 
@@ -238,6 +241,7 @@ class main:
                     wanted_champs.append(x)
             except KeyError:
                 pass
+        # print("Strategy: {}".format(wanted_champs))
         return wanted_champs
 
     def main():
