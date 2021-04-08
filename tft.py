@@ -269,7 +269,7 @@ class main:
         for i in range(iterations):
             wrappers.click_to_r("./captures/orb_white.png")
             wrappers.click_to_r("./captures/orb_blue.png")
-            wrappers.click_to("./captures/orb_red.png")
+            wrappers.click_to_r("./captures/orb_red.png")
             # wrappers.click_to("./captures/orb_fortune.png")
 
     def surrender():
