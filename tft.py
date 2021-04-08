@@ -297,21 +297,24 @@ class main:
 # End main process
 
 
-# Start auth + main script
-print("Developed by:")
-printy(r"""
-[c>] _____       _                            _   @
-[c>]|  __ \     | |                          | |  @
-[c>]| |  | | ___| |_ ___ _ __ __ _  ___ _ __ | |_ @
-[c>]| |  | |/ _ \ __/ _ \ '__/ _` |/ _ \ '_ \| __|@
-[c>]| |__| |  __/ ||  __/ | | (_| |  __/ | | | |_ @
-[c>]|_____/ \___|\__\___|_|  \__, |\___|_| |_|\__|@
-[c>]                          __/ |               @
-[c>]                         |___/                @
-""")
+if __name__ == 'main':
 
-printy(f"Welcome! You're running Detergent's TFT bot.\nPlease feel free to ask questions or contribute at https://github.com/Detergent13/tft-bot", "nB")
-print("Bot started, queuing up!")
-main.queue()
+    # Start auth + main script
+    print("Developed by:")
+    printy(r"""
+    [c>] _____       _                            _   @
+    [c>]|  __ \     | |                          | |  @
+    [c>]| |  | | ___| |_ ___ _ __ __ _  ___ _ __ | |_ @
+    [c>]| |  | |/ _ \ __/ _ \ '__/ _` |/ _ \ '_ \| __|@
+    [c>]| |__| |  __/ ||  __/ | | (_| |  __/ | | | |_ @
+    [c>]|_____/ \___|\__\___|_|  \__, |\___|_| |_|\__|@
+    [c>]                          __/ |               @
+    [c>]                         |___/                @
+    """)
+
+    printy(f"Welcome! You're running Detergent's TFT bot.\nPlease feel free to ask questions or contribute at "
+           f"https://github.com/Detergent13/tft-bot", "nB")
+    print("Bot started, queuing up!")
+    main.queue()
 
 # End auth + main script
