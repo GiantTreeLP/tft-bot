@@ -1,0 +1,238 @@
+{
+  "Vanguard": {
+    "Name": "Vanguard",
+    "Champions": {
+      "Aatrox": {
+        "Items": [],
+        "Tier": 1
+      },
+      "Braum": {
+        "Items": [],
+        "Tier": 3
+      },
+      "Garen": {
+        "Items": [],
+        "Tier": 3
+      },
+      "Nautilus": {
+        "Items": [],
+        "Tier": 3
+      },
+      "Ornn": {
+        "Items": [],
+        "Tier": 1
+      },
+      "Sejuani": {
+        "Items": [],
+        "Tier": 1
+      },
+      "Wukong": {
+        "Items": [],
+        "Tier": 3
+      }
+    }
+  },
+  "Divine": {
+    "Name": "Divine",
+    "Champions": {
+      "Irelia": {
+        "Items": [],
+        "Tier": 3
+      },
+      "Jax": {
+        "Items": [],
+        "Tier": 3
+      },
+      "Kayle": {
+        "Items": [],
+        "Tier": 1
+      },
+      "LeeSin": {
+        "Items": [],
+        "Tier": 1
+      },
+      "Nasus": {
+        "Items": [],
+        "Tier": 3
+      },
+      "Wukong": {
+        "Items": [],
+        "Tier": 3
+      }
+    }
+  },
+  "Sharpshooter": {
+    "Name": "Sharpshooter",
+    "Champions": {
+      "Nidalee": {
+        "Items": [],
+        "Tier": 3
+      },
+      "Samira": {
+        "Items": [],
+        "Tier": 1
+      },
+      "Sivir": {
+        "Items": [],
+        "Tier": 3
+      },
+      "Teemo": {
+        "Items": [],
+        "Tier": 3
+      },
+      "Tristana": {
+        "Items": [],
+        "Tier": 3
+      }
+    }
+  },
+  "Mage": {
+    "Name": "Mage",
+    "Champions": {
+      "Annie": {
+        "Items": [],
+        "Tier": 3
+      },
+      "AurelionSol": {
+        "Items": [],
+        "Tier": 2
+      },
+      "Brand": {
+        "Items": [],
+        "Tier": 3
+      },
+      "Lulu": {
+        "Items": [],
+        "Tier": 3
+      },
+      "TwistedFate": {
+        "Items": [],
+        "Tier": 2
+      },
+      "Veigar": {
+        "Items": [],
+        "Tier": 3
+      }
+    }
+  },
+  "Assassin": {
+    "Name": "Assassin",
+    "Champions": {
+      "Akali": {
+        "Items": [],
+        "Tier": 2
+      },
+      "Diana": {
+        "Items": [],
+        "Tier": 3
+      },
+      "Katarina": {
+        "Items": [],
+        "Tier": 2
+      },
+      "Pyke": {
+        "Items": [],
+        "Tier": 3
+      },
+      "Talon": {
+        "Items": [],
+        "Tier": 2
+      }
+    }
+  },
+  "Duelist": {
+    "Name": "Duelist",
+    "Champions": {
+      "Fiora": {
+        "Items": [],
+        "Tier": 3
+      },
+      "Jax": {
+        "Items": [],
+        "Tier": 3
+      },
+      "Kalista": {
+        "Items": [],
+        "Tier": 2
+      },
+      "LeeSin": {
+        "Items": [],
+        "Tier": 1
+      },
+      "Tryndamere": {
+        "Items": [],
+        "Tier": 2
+      },
+      "Yasuo": {
+        "Items": [],
+        "Tier": 3
+      }
+    }
+  },
+  "Cultist": {
+    "Name": "Cultist",
+    "Champions": {
+      "Aatrox": {
+        "Items": [],
+        "Tier": 1
+      },
+      "Elise": {
+        "Items": [],
+        "Tier": 3
+      },
+      "Kalista": {
+        "Items": [],
+        "Tier": 2
+      },
+      "Pyke": {
+        "Items": [],
+        "Tier": 3
+      },
+      "Sivir": {
+        "Items": [],
+        "Tier": 2
+      },
+      "TwistedFate": {
+        "Items": [],
+        "Tier": 3
+      },
+      "Vladimir": {
+        "Items": [],
+        "Tier": 3
+      },
+      "Zilean": {
+        "Items": [],
+        "Tier": 1
+      }
+    }
+  },
+  "Dragonsoul": {
+    "Name": "Dragonsoul",
+    "Champions": {
+      "AurelionSol": {
+        "Items": [],
+        "Tier": 1
+      },
+      "Brand": {
+        "Items": [],
+        "Tier": 3
+      },
+      "Braum": {
+        "Items": [],
+        "Tier": 3
+      },
+      "Olaf": {
+        "Items": [],
+        "Tier": 1
+      },
+      "Swain": {
+        "Items": [],
+        "Tier": 1
+      },
+      "Tristana": {
+        "Items": [],
+        "Tier": 3
+      }
+    }
+  }
+}
