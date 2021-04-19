@@ -54,9 +54,10 @@ class Main:
         Wrappers.ACTIVE_WINDOW = Wrappers.GAME
         print("Loading...")
         while not Wrappers.onscreen("../captures/1-1.png"):
+            Wrappers.screenshot_active_window()
             if Wrappers.onscreen("../captures/reroll.png"):
                 break
-            cv2.waitKey(1000)
+            Wrappers.wait(1000)
         print("Match starting!")
         self.start()
 
@@ -69,17 +70,17 @@ class Main:
 
         self.main()
 
-    def buy(self, iterations: int = 1):
+    def buy(self):
         Wrappers.ACTIVE_WINDOW = Wrappers.GAME
-        for i in range(iterations):
-            for champ in self.combo_champs:
-                Wrappers.click_to(f"../captures/champions/{champ.lower()}.png")
+        for champ in self.combo_champs:
+            Wrappers.click_to(f"../captures/champions/{champ.lower()}.png")
 
     def buy_reroll(self):
         Wrappers.ACTIVE_WINDOW = Wrappers.GAME
 
         for champ in self.combo_champs:
             Wrappers.click_to(f"../captures/champions/{champ.lower()}.png")
+        Wrappers.screenshot_active_window()
         if not any(Wrappers.onscreen(f"../captures/champions/{champ.lower()}.png") for champ in self.combo_champs):
             # Only re-roll if there is no champ we want to buy
             Wrappers.click_to("../captures/reroll.png")
@@ -89,7 +90,8 @@ class Main:
 
         stage = "1-1"
 
-        while Wrappers.get_tft_window():
+        while Wrappers.ACTIVE_WINDOW == Wrappers.GAME and Wrappers.get_tft_window():
+            Wrappers.screenshot_active_window()
 
             if Wrappers.onscreen("../captures/exit.png"):
                 Wrappers.click_to("../captures/exit.png")
@@ -134,51 +136,59 @@ class Main:
     def pick_champ(self, path: str):
         Wrappers.ACTIVE_WINDOW = Wrappers.GAME
         while Wrappers.onscreen(path):
+            Wrappers.screenshot_active_window()
             top_left = Wrappers.get_tft_window().topleft
             auto.rightClick(top_left.x + 928 + random.randint(-25, 25), top_left.y + 396 + random.randint(-10, 10))
-            cv2.waitKey(1000)
-        cv2.waitKey(4000)
+            Wrappers.wait(1000)
+        Wrappers.wait(4000)
 
     def orbs(self, iterations: int = 1):
         Wrappers.ACTIVE_WINDOW = Wrappers.GAME
         for i in range(iterations):
+            Wrappers.screenshot_active_window()
             Wrappers.click_to_r("../captures/orb_white.png", precision=0.82)
-            Wrappers.click_to_r("../captures/orb_blue.png", precision=0.7)
+            Wrappers.click_to_r("../captures/orb_blue.png", precision=0.75)
             Wrappers.click_to_r("../captures/orb_red.png", precision=0.8)
             # wrappers.click_to("./captures/orb_fortune.png")
 
     def surrender(self):
         Wrappers.ACTIVE_WINDOW = Wrappers.GAME
         while not Wrappers.onscreen("../captures/surrender 2.png"):
+            Wrappers.screenshot_active_window()
             pydirectinput.press('enter')
             auto.write("/ff")
             pydirectinput.press('enter')
-        cv2.waitKey(1000)
+        Wrappers.wait(1000)
+        Wrappers.screenshot_active_window()
         Wrappers.click_to("../captures/surrender 2.png")
         self.exit_game()
 
     def buy_loop(self, path: str, precision: float = 0.8):
         while not Wrappers.onscreen(path, precision) and not Wrappers.onscreen("../captures/exit.png"):
+            Wrappers.screenshot_active_window()
             self.orbs(1)
             self.buy()
-            cv2.waitKey(1000)
+            Wrappers.wait(1000)
 
     def buy_reroll_loop(self, path: str, precision: float = 0.8):
         while not Wrappers.onscreen(path, precision) and not Wrappers.onscreen("../captures/exit.png"):
+            Wrappers.screenshot_active_window()
             self.orbs(1)
             self.buy_reroll()
-            cv2.waitKey(1000)
+            Wrappers.wait(1000)
 
     def exit_game(self):
         Wrappers.ACTIVE_WINDOW = Wrappers.LAUNCHER
-        cv2.waitKey(15000)
+        Wrappers.wait(15000)
         while Wrappers.onscreen("../captures/missions ok.png"):
+            Wrappers.screenshot_active_window()
             Wrappers.click_to("../captures/missions ok.png")
-            cv2.waitKey(5000)
+            Wrappers.wait(5000)
         while Wrappers.onscreen("../captures/skip waiting for stats.png"):
+            Wrappers.screenshot_active_window()
             Wrappers.click_to("../captures/skip waiting for stats.png")
-        cv2.waitKey(5000)
+        Wrappers.wait(5000)
         lcu_data = LCU.connect(self.path)
         LCU.play_again(lcu_data)
-        cv2.waitKey(10000)
+        Wrappers.wait(10000)
         print("Queuing up again!")
